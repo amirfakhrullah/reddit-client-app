@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Header from '../Header/Header';
 import SideBar from '../SideBar/SideBar';
-import RedditPostList from '../RedditPostList/RedditPostList';
-import RightSideBar from '../RightSideBar/RightSideBar';
+import RedditPostList from '../../features/RedditPostList/RedditPostList';
+import RightSideBar from '../../features/RightSideBar/RightSideBar';
 
 function App() {
   return (

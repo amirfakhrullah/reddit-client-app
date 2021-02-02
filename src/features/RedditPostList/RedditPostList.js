@@ -1,6 +1,6 @@
 import React from 'react';
 import './RedditPostList.css';
-import RedditPost from '../RedditPost/RedditPost';
+import RedditPost from '../../features/RedditPost/RedditPost';
 
 export default function RedditPostList() {
     return (

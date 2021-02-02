@@ -1,7 +1,6 @@
 import React from 'react';
 import './Header.css';
-import { Link } from 'react-router-dom';
-
+import { useState } from 'react';
 
 import SearchIcon from '@material-ui/icons/Search';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
@@ -10,6 +9,16 @@ import BarChartIcon from '@material-ui/icons/BarChart';
 import MenuIcon from '@material-ui/icons/Menu';
 
 export default function Header() {
+    const [searchItem, setSearchItem] = useState('');
+
+    const onKeyPress = (e) => {
+        e.preventDefault();
+    }
+
+    const onChange = (e) => {
+        setSearchItem(e.target.value);
+    }
+
     return (
         <div className="header">
             <div className="header__left">
@@ -18,7 +27,7 @@ export default function Header() {
                 </div>
                 <div className="searchbar">
                     <SearchIcon />
-                    <input type="text" placeholder="search..." />
+                    <input type="text" placeholder="search..." onChange={onChange} value={searchItem} onKeyPress={onKeyPress} />
                 </div>
             </div>
 
