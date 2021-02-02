@@ -1,0 +1,31 @@
+.rightsidebar-container {
+    margin-right: 40px;
+    width: 300px;
+}
+
+.rightsidebar {
+    margin-top: 20px;
+    border: 1.5px solid rgb(71, 68, 68);
+    border-radius: 10px;
+    min-height: 100px;
+    padding: 0 10px;
+}
+
+.rightsidebar .subreddit__header {
+    border-bottom: 1.5px solid rgb(71, 68, 68);
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1500px) {
+    .rightsidebar-container {
+        margin-right: 20px;
+        width: none;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .rightsidebar-container {
+        display: none;
+    }
+}

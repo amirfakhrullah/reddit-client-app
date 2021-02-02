@@ -1,0 +1,151 @@
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 100;
+    position: sticky;
+    top: 0px;
+    background-color: #242323;
+    border-bottom: 2px solid rgb(71, 68, 68);
+    height: 50px;
+}
+
+/* HEADER LEFT */
+
+.header__left {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.reddit-logo {
+    display: flex;
+    align-items: center;
+    padding-right: 5%;
+}
+
+.reddit-logo > img {
+    height: 40px;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    background-color: rgb(71, 68, 68);
+    padding: 15px 10px;
+    margin: 10px;
+    border-radius: 999px;
+}
+
+.searchbar > input {
+    border: none;
+    background-color: transparent;
+    outline-width: 0;
+    max-width: 200px;
+}
+
+input, select, textarea{
+    color: white;
+}
+
+textarea:focus, input:focus {
+    color: white;
+}
+
+/* HEADER MIDDLE */
+
+.header__middle {
+    display: flex;
+    flex: 1;
+    position: relative;
+    left: 5%;
+}
+
+.header__option {
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+}
+
+.header__option:hover > .MuiSvgIcon-root { 
+    color: steelblue;
+    cursor: pointer;
+}
+
+.header-nav-title {
+    padding-left: 12%;
+}
+
+.header__option:hover >  p.header-nav-title {
+    color: steelblue;
+}
+
+.header__option:hover {
+    border-bottom: 2px solid steelblue;
+    cursor: pointer;
+}
+
+.active,
+.active > .MuiSvgIcon-root {
+    color: steelblue;
+}
+
+.active {
+    border-bottom: 2px solid steelblue;
+}
+
+/* HEADER RIGHT */
+
+.header__right {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header__right:hover {
+    cursor: pointer;
+}
+
+.header__right:hover > .MuiSvgIcon-root {
+    color: steelblue;
+    cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 2200px) {
+    .header__middle {
+        left: 17%;
+    }
+
+    .header__option {
+        padding: 0 9.2%;
+    }
+}
+
+@media only screen and (min-width: 1700px) {
+    .header__middle {
+        left: 15%;
+    }
+
+    .header__option {
+        padding: 0 6%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .searchbar > input {
+        width: 100px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .searchbar > input {
+        max-width: 50px;
+    }
+
+    p.header-nav-title {
+        display: none;
+    }
+}

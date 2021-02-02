@@ -1,0 +1,67 @@
+.sidebar {
+    display: block;
+    padding: 0 20px;
+    width: 250px;
+}
+
+.sidebar__option {
+    display: flex;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 33px;
+}
+
+.sidebar__option > .MuiSvgIcon-root {
+    color: steelblue;
+}
+
+.sidebar__option:hover {
+    background-color: rgb(102, 96, 96);
+    cursor: pointer;
+}
+
+.sidebar__option__p {
+    padding-left: 20px;
+}
+
+/* SUBREDDITS */
+
+.subreddit__header {
+    margin-top: 30px;
+    padding-bottom: 5px;
+    /* border-bottom: 1px solid rgb(180, 172, 172); */
+}
+
+h3.subreddit__header {
+    font-weight: lighter;
+    letter-spacing: 1px;
+    color: rgb(180, 172, 172);
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 900px) {
+    .sidebar {
+        width: 175px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .sidebar {
+        width: 50px;
+    }
+
+    .sidebar__option__p {
+        display: none;
+    } 
+
+    .subreddit__header {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .sidebar {
+        display: none;
+    }
+}
