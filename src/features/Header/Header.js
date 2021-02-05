@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css';
 import { useState, useEffect } from 'react';
-import getHomePosts from '../../app/reddit';
+import RedditCall from '../../app/reddit';
 
 import SearchIcon from '@material-ui/icons/Search';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
@@ -10,12 +10,7 @@ import BarChartIcon from '@material-ui/icons/BarChart';
 import MenuIcon from '@material-ui/icons/Menu';
 
 export default function Header() {
-    const [searchItem, setSearchItem] = useState('');
-
-    useEffect(() => {
-        const results = getHomePosts();
-        console.log(results);
-    }, [])
+    const [searchItem, setSearchItem] = useState([]);
 
     const onKeyPress = (e) => {
         e.preventDefault();

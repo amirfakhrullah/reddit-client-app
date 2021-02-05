@@ -1,4 +1,3 @@
-import { PostAddSharp } from '@material-ui/icons';
 import { createSlice } from '@reduxjs/toolkit';
 
 const redditPostsSlice = createSlice({
@@ -17,17 +16,20 @@ const redditPostsSlice = createSlice({
                 case "GET_HOME":
                     return {
                         ...state,
-                        home: action.payload.home
+                        home: action.payload.home,
+                        top: action.payload.top
                     }
                 case "GET_POPULAR":
                     return {
                         ...state,
-                        popular: action.payload.popular
+                        popular: action.payload.popular,
+                        hot: action.payload.popular
                     }
                 case "GET_ALL":
                     return {
                         ...state,
-                        all: action.payload.all
+                        all: action.payload.all,
+                        latest: action.payload.all
                     }
                 case "GET_HOT":
                     return {
@@ -52,4 +54,4 @@ const redditPostsSlice = createSlice({
 })
 
 export default redditPostsSlice.reducer;
-export default { redditPostsReducer } = redditPostsSlice.actions;
+export const { redditPostsReducer } = redditPostsSlice.actions;
