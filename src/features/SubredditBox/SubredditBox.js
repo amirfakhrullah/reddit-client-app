@@ -16,7 +16,7 @@ export default function SubredditBox() {
         })
     }, []);
 
-    var subredditList = useSelector(state =>state.subreddits);
+    var subredditList = useSelector(state => state.subreddits);
     subredditList = subredditList.slice(0, 10);
 
     return (
@@ -24,15 +24,16 @@ export default function SubredditBox() {
             {
                 subredditList && subredditList.map(sub => (
                     <div className="subreddit-box" onClick={() => {
-                        window.location.href=sub.data.url}}>
-                 <div className="subreddit__image">
-                     <img src={sub.data.icon_img} />
-                 </div>
-                 <div className="subreddit__details">
-                     <h3 className="subreddit">{sub.data.display_name_prefixed}</h3>
-                     <p>{sub.data.subscribers} subscribers</p>
-                 </div>
-             </div>
+                        window.location.href = sub.data.url
+                    }}>
+                        <div className="subreddit__image">
+                            <img src={sub.data.icon_img} />
+                        </div>
+                        <div className="subreddit__details">
+                            <h3 className="subreddit">{sub.data.display_name_prefixed}</h3>
+                            <p>{(sub.data.subscribers > 1000 && sub.data.subscribers < 1000000) ? (sub.data.subscribers / 1000).toFixed(1) + 'k': (sub.data.subscribers / 1000000).toFixed(1) + 'M'} Members</p>
+                        </div>
+                    </div>
                 ))
             }
         </div>
