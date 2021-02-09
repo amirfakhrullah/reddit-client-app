@@ -8,7 +8,7 @@ export const initialOptions = {
 
 
 const RedditCall = {
-    getTrendingSubreddits() {
+    fetchTrendingSubreddits() {
         return fetch(`${API}/reddits.json`, initialOptions)
             .then(response => {
                 if (response.ok) {
@@ -23,7 +23,7 @@ const RedditCall = {
             });
     },
 
-    getHomePosts() {
+    fetchHomePosts() {
         return fetch(`${API}/r/home.json`, initialOptions)
             .then(response => {
                 if (response.ok) {
@@ -38,7 +38,7 @@ const RedditCall = {
             })
     },
 
-    getSearchResults(term) {
+    fetchSearchResults(term) {
         return fetch(`${API}/search.json?q=${term}`, initialOptions)
             .then(response => {
                 if (response.ok) {
