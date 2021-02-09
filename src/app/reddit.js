@@ -9,7 +9,7 @@ export const initialOptions = {
 
 const RedditCall = {
     getTrendingSubreddits() {
-        return fetch(`${API}/r/trendingsubreddits.json`, initialOptions)
+        return fetch(`${API}/reddits.json`, initialOptions)
             .then(response => {
                 if (response.ok) {
                     return response.json();
@@ -18,12 +18,9 @@ const RedditCall = {
                 if (!jsonResponse) {
                     return [];
                 }
-                // console.log(jsonResponse.data.children[0]);
-                // return jsonResponse.data.children[0];
-                const title = jsonResponse.data.children[0].data.title;
-                const strtitle = title.split(" ");
-                const results = strtitle.filter(word => )
-            })
+                console.log(jsonResponse.data.children.slice(1));
+                return jsonResponse.data.children.slice(1);
+            });
     },
 
     getHomePosts() {

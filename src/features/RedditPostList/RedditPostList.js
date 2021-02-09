@@ -2,7 +2,7 @@ import React from 'react';
 import './RedditPostList.css';
 import RedditPost from '../RedditPost/RedditPost';
 
-export default function RedditPostList() {
+function RedditPostList() {
     return (
         <div className="redditpostlist">
             <RedditPost />
@@ -16,3 +16,5 @@ export default function RedditPostList() {
         </div>
     );
 }
+
+export default RedditPostList;
