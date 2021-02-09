@@ -8,7 +8,8 @@ const redditPostListSlice = createSlice({
         controversial: [],
         hot: [],
         latest: [],
-        top: []
+        top: [],
+        searchResults: []
     },
     reducers: {
         getHomePosts: (state, action) => {
@@ -22,10 +23,13 @@ const redditPostListSlice = createSlice({
         getHomePostsControversial: (state, action) => {
             state.controversial = action.payload;
             state.top = action.payload;
+        },
+        getSearchResults: (state, action) => {
+            state.searchResults = action.payload;
         }
     }
 })
 
-export const { getHomePosts, getHomePostsPopular, getHomePostsControversial } = redditPostListSlice.actions;
+export const { getHomePosts, getHomePostsPopular, getHomePostsControversial, getSearchResults } = redditPostListSlice.actions;
 
 export default redditPostListSlice.reducer;
