@@ -8,11 +8,11 @@ export default function RightSideBar() {
         <div className="rightsidebar-container">
             <div className="rightsidebar">
                 <h3 className="subreddit__header">Subreddits for Programmers</h3>
-                <SubredditBox />
+               
             </div>
             <div className="rightsidebar">
                 <h3 className="subreddit__header">Subreddits for Programmers</h3>
-                <SubredditBox />
+
             </div>
         </div>
     )

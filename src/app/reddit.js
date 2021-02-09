@@ -18,7 +18,6 @@ const RedditCall = {
                 if (!jsonResponse) {
                     return [];
                 }
-                console.log(jsonResponse.data.children.slice(1));
                 return jsonResponse.data.children.slice(1);
             });
     },
@@ -33,7 +32,6 @@ const RedditCall = {
                 if (!jsonResponse) {
                     return [];
                 }
-                console.log(jsonResponse.data.children);
                 return jsonResponse.data.children;
             })
     },

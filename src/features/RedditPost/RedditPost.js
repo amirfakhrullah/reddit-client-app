@@ -6,7 +6,7 @@ import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import ModeCommentIcon from '@material-ui/icons/ModeComment';
 import MoreIcon from '@material-ui/icons/More';
 
-export default function RedditPost() {
+export default function RedditPost(props) {
     return (
         <div className="redditpost">
             <div className="redditpost__top">
@@ -14,11 +14,11 @@ export default function RedditPost() {
                     <img src="" />
                 </div>
                 <p className="redditpost-sub">r/wallstreetbets</p>
-                <p className="redditpost-by">Posted by adfwda</p>
+                <p className="redditpost-by">Posted by {props.post.data.author_fullname}</p>
                 <p className="redditpost-time">3 hours ago</p>
             </div>
             <div className="redditpost__middle">
-                <h3 className="redditpost-post">Russia may fine citizens for using SpaceX's Starlink internet. Here's how Elon Musk's service poses a threat to authoritarian regimes.</h3>
+                <h3 className="redditpost-post">{props.post.data.title}</h3>
                 <div className="redditpost-post-image">
                     <img src="" />
                 </div>

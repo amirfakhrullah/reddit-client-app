@@ -2,17 +2,14 @@ import React from 'react';
 import './RedditPostList.css';
 import RedditPost from '../RedditPost/RedditPost';
 
-function RedditPostList() {
+function RedditPostList(props) {
     return (
         <div className="redditpostlist">
-            <RedditPost />
-            <RedditPost />
-            <RedditPost />
-            <RedditPost />
-            <RedditPost />
-            <RedditPost />
-            <RedditPost />
-            <RedditPost />
+            {
+                props.posts && props.posts.map(data => (
+                    <RedditPost post={data} />
+                ))
+            }
         </div>
     );
 }
