@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import RedditCall from './app/reddit';
 import { getHomePosts, getHomePostsPopular, getHomePostsControversial } from './features/RedditPostList/redditPostListSlice';
+import { getSubredditHead, getSubredditPosts, getSubredditPostsHot, getSubredditPostsRising, getSubredditPostsNew } from './features/RedditPostList/subredditPageSlice';
 
 function App() {
   const dispatch = useDispatch();
@@ -25,12 +26,28 @@ function App() {
     RedditCall.fetchHomePostsControversial().then(results => {
       dispatch(getHomePostsControversial(results))
     });
+    RedditCall.fetchSubredditAbout('r/news').then(results => {
+      dispatch(getSubredditHead(results))
+    });
+    RedditCall.fetchSubredditPosts('r/news').then(results => {
+      dispatch(getSubredditPosts(results))
+    });
+    RedditCall.fetchSubredditPostsHot('r/news').then(results => {
+      dispatch(getSubredditPostsHot(results))
+    });
+    RedditCall.fetchSubredditPostsRising('r/news').then(results => {
+      dispatch(getSubredditPostsRising(results))
+    });
+    RedditCall.fetchSubredditPostsNew('r/news').then(results => {
+      dispatch(getSubredditPostsNew(results))
+    });
   }, []);
 
   const homePosts = useSelector(state => state.redditPostList.home);
   const homePostsPopular = useSelector(state => state.redditPostList.popular);
   const homePostsControversial = useSelector(state => state.redditPostList.controversial);
-  const { hot, latest, top } = useSelector(state => state.redditPostList);
+
+  const { subHead, subPosts, subPostsHot, subPostsRising, subPostsNew } = useSelector(state => state.subredditPage);
 
   return (
     <body>
@@ -48,14 +65,17 @@ function App() {
             <Route exact path="/controversial">
               <RedditPostList posts={homePostsControversial} />
             </Route>
-            <Route path="/hot">
-              <RedditPostList posts={hot} />
+            <Route exact path={`/${subHead.display_name_prefixed}`}>
+              <RedditPostList posts={subPosts} subreddit={subHead} />
             </Route>
-            <Route path="/latest">
-              <RedditPostList posts={latest} />
+            <Route path={`/${subHead.display_name_prefixed}/hot`}>
+              <RedditPostList posts={subPostsHot} subreddit={subHead} />
             </Route>
-            <Route path="/top">
-              <RedditPostList posts={top} />
+            <Route path={`/${subHead.display_name_prefixed}/latest`}>
+              <RedditPostList posts={subPostsNew} subreddit={subHead} />
+            </Route>
+            <Route path={`/${subHead.display_name_prefixed}/rising`}>
+              <RedditPostList posts={subPostsRising} subreddit={subHead} />
             </Route>
           </Switch>
           <RightSideBar />

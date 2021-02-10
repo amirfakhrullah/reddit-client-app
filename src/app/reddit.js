@@ -78,6 +78,62 @@ const RedditCall = {
             })
     },
 
+    fetchSubredditPosts(rterm) {
+        return fetch(`${API}/${rterm}/.json`, initialOptions)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+            }).then(jsonResponse => {
+                if (!jsonResponse) {
+                    return [];
+                }
+                return jsonResponse.data.children
+            })
+    },
+
+    fetchSubredditPostsHot(rterm) {
+        return fetch(`${API}/${rterm}/hot.json`, initialOptions)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+            }).then(jsonResponse => {
+                if (!jsonResponse) {
+                    return [];
+                }
+                return jsonResponse.data.children
+            })
+    },
+
+    fetchSubredditPostsRising(rterm) {
+        return fetch(`${API}/${rterm}/rising/.json`, initialOptions)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+            }).then(jsonResponse => {
+                if (!jsonResponse) {
+                    return [];
+                }
+                return jsonResponse.data.children
+            })
+    },
+
+    fetchSubredditPostsNew(rterm) {
+        return fetch(`${API}/${rterm}/new/.json`, initialOptions)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+            }).then(jsonResponse => {
+                if (!jsonResponse) {
+                    return [];
+                }
+                return jsonResponse.data.children
+            })
+    },
+
     fetchSearchResults(term) {
         return fetch(`${API}/search.json?q=${term}`, initialOptions)
             .then(response => {

@@ -37,6 +37,10 @@
 }
 
 @media only screen and (max-width: 900px) {
+    .subreddit__details h3 {
+        font-size: 1em;
+    }
+
     .subreddit__details p {
         display: none;
     }
