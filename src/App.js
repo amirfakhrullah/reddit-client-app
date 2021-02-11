@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import ScrollToTop from './app/scrollToTop'
+
 import AbortController from "abort-controller"
 
 import Header from './features/Header/Header';
@@ -49,24 +51,26 @@ function App() {
   return (
     <div>
       <Router>
-        <Header onSearch={search} />
-        <div className="content">
-          <SideBar />
-          <Switch>
-            <Route exact path={["/", "/latest"]}>
-              <RedditPostList posts={homePosts} />
-            </Route>
-            <Route exact path={["/popular", "/hot"]}>
-              <RedditPostList posts={homePostsPopular} />
-            </Route>
-            <Route exact path={["/controversial", "/rising"]}>
-              <RedditPostList posts={homePostsControversial} />
-            </Route>
-            <Route exact path={"/results/"} component={SearchResults} />
-            <Route path="/r/:id" component={SubredditPage} />
-          </Switch>
-          <RightSideBar />
-        </div>
+        <ScrollToTop>
+          <Header onSearch={search} />
+          <div className="content">
+            <SideBar />
+            <Switch>
+              <Route exact path={["/", "/latest"]}>
+                <RedditPostList posts={homePosts} />
+              </Route>
+              <Route exact path={["/popular", "/hot"]}>
+                <RedditPostList posts={homePostsPopular} />
+              </Route>
+              <Route exact path={["/controversial", "/rising"]}>
+                <RedditPostList posts={homePostsControversial} />
+              </Route>
+              <Route exact path={"/results/"} component={SearchResults} />
+              <Route path="/r/:id" component={SubredditPage} />
+            </Switch>
+            <RightSideBar />
+          </div>
+        </ScrollToTop>
       </Router>
     </div>
   );
