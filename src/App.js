@@ -2,18 +2,24 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import AbortController from "abort-controller"
+
 import Header from './features/Header/Header';
 import SideBar from './features/SideBar/SideBar';
 import RedditPostList from './features/RedditPostList/RedditPostList';
 import RightSideBar from './features/RightSideBar/RightSideBar';
+import SearchResults from './features/SearchResults/SearchResults';
+import SubredditPage from './features/SubredditPage/SubredditPage';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import RedditCall from './app/reddit';
-import { getHomePosts, getHomePostsPopular, getHomePostsControversial } from './features/RedditPostList/redditPostListSlice';
-import { getSubredditHead, getSubredditPosts, getSubredditPostsHot, getSubredditPostsRising, getSubredditPostsNew } from './features/RedditPostList/subredditPageSlice';
+import { getHomePosts, getHomePostsPopular, getHomePostsControversial, getSearchResults } from './features/RedditPostList/redditPostListSlice';
 
 function App() {
+
+  const controller = new AbortController()
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,62 +32,43 @@ function App() {
     RedditCall.fetchHomePostsControversial().then(results => {
       dispatch(getHomePostsControversial(results))
     });
-    RedditCall.fetchSubredditAbout('r/news').then(results => {
-      dispatch(getSubredditHead(results))
-    });
-    RedditCall.fetchSubredditPosts('r/news').then(results => {
-      dispatch(getSubredditPosts(results))
-    });
-    RedditCall.fetchSubredditPostsHot('r/news').then(results => {
-      dispatch(getSubredditPostsHot(results))
-    });
-    RedditCall.fetchSubredditPostsRising('r/news').then(results => {
-      dispatch(getSubredditPostsRising(results))
-    });
-    RedditCall.fetchSubredditPostsNew('r/news').then(results => {
-      dispatch(getSubredditPostsNew(results))
-    });
-  }, []);
+    return controller.abort();
+  }, [dispatch]);
+
+  const search = (term) => {
+    RedditCall.fetchSearchResults(term).then(results => {
+      dispatch(getSearchResults(results));
+    })
+  };
 
   const homePosts = useSelector(state => state.redditPostList.home);
   const homePostsPopular = useSelector(state => state.redditPostList.popular);
   const homePostsControversial = useSelector(state => state.redditPostList.controversial);
 
-  const { subHead, subPosts, subPostsHot, subPostsRising, subPostsNew } = useSelector(state => state.subredditPage);
 
   return (
-    <body>
+    <div>
       <Router>
-        <Header />
+        <Header onSearch={search} />
         <div className="content">
           <SideBar />
           <Switch>
-            <Route exact path="/">
+            <Route exact path={["/", "/latest"]}>
               <RedditPostList posts={homePosts} />
             </Route>
-            <Route exact path="/popular">
+            <Route exact path={["/popular", "/hot"]}>
               <RedditPostList posts={homePostsPopular} />
             </Route>
-            <Route exact path="/controversial">
+            <Route exact path={["/controversial", "/rising"]}>
               <RedditPostList posts={homePostsControversial} />
             </Route>
-            <Route exact path={`/${subHead.display_name_prefixed}`}>
-              <RedditPostList posts={subPosts} subreddit={subHead} />
-            </Route>
-            <Route path={`/${subHead.display_name_prefixed}/hot`}>
-              <RedditPostList posts={subPostsHot} subreddit={subHead} />
-            </Route>
-            <Route path={`/${subHead.display_name_prefixed}/latest`}>
-              <RedditPostList posts={subPostsNew} subreddit={subHead} />
-            </Route>
-            <Route path={`/${subHead.display_name_prefixed}/rising`}>
-              <RedditPostList posts={subPostsRising} subreddit={subHead} />
-            </Route>
+            <Route exact path={"/results/"} component={SearchResults} />
+            <Route path="/r/:id" component={SubredditPage} />
           </Switch>
           <RightSideBar />
         </div>
       </Router>
-    </body>
+    </div>
   );
 }
 

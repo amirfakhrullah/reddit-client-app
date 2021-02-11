@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { getSearchResults } from '../RedditPostList/redditPostListSlice';
 
 import { useSelector } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { Route, Link, withRouter } from 'react-router-dom';
 
 import SearchIcon from '@material-ui/icons/Search';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
@@ -14,51 +14,51 @@ import FiberNewIcon from '@material-ui/icons/FiberNew';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import MenuIcon from '@material-ui/icons/Menu';
 
-export default function Header() {
-    const { subHead } = useSelector(state => state.subredditPage);
+function Header(props) {
     const dispatch = useDispatch();
     const [searchItem, setSearchItem] = useState('');
 
-    const onKeyPress = (e) => {
-        e.preventDefault();
-        RedditCall.fetchSearchResults(searchItem).then(results => {
-            dispatch(getSearchResults(results));
-        });
-        setSearchItem('');
+    const handleKeyPress = (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            props.onSearch(searchItem);
+            setSearchItem('');
+            props.history.push('/results/');
+        };
     }
 
-    const onChange = (e) => {
+    const handleTextChange = (e) => {
         setSearchItem(e.target.value);
     }
 
     return (
         <div className="header">
             <div className="header__left">
-                <div className="reddit-logo">
+                <div className="reddit-logo" onClick={() => window.location.href='/'}>
                     <img src="./reddit.png" />
                 </div>
                 <div className="searchbar">
                     <SearchIcon />
-                    <input type="text" placeholder="search..." onChange={onChange} value={searchItem} onKeyPress={onKeyPress} />
+                    <input type="text" id="search" placeholder="search..." onChange={handleTextChange} value={searchItem} onKeyPress={handleKeyPress} />
                 </div>
             </div>
 
-            <Route exact path="/">
+            <Route exact path={["/", "/popular", "/controversial", "/hot", "/latest", "/rising"]}>
                 <div className="header__middle">
                     <div className="header__option active" onClick={() => {
-                        window.location.href = `/${subHead.display_name_prefixed}/hot`
+                        window.location.href = "/hot"
                     }}>
                         <WhatshotIcon />
                         <p className="header-nav-title">Hot</p>
                     </div>
                     <div className="header__option" onClick={() => {
-                        window.location.href = `/${subHead.display_name_prefixed}/latest`
+                        window.location.href = "/latest"
                     }}>
                         <FiberNewIcon />
                         <p className="header-nav-title">Latest</p>
                     </div>
                     <div className="header__option" onClick={() => {
-                        window.location.href = `/${subHead.display_name_prefixed}/rising`
+                        window.location.href = "/rising"
                     }}>
                         <BarChartIcon />
                         <p className="header-nav-title">Rising</p>
@@ -72,3 +72,5 @@ export default function Header() {
         </div>
     )
 }
+
+export default withRouter(Header);

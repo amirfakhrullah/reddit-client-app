@@ -1,0 +1,82 @@
+.subreddit__main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 800px;
+}
+
+.subredditHead {
+    margin: 20px 0;
+    border-radius: 20px 20px 0 0;
+    border: 1px solid rgb(71, 68, 68);
+}
+
+/* TOP */
+
+.subredditHead__top {
+    display: flex;
+    align-items: flex-end;
+    height: 150px;
+    border-radius: 20px 20px 0 0;
+    border: 1px solid rgb(71, 68, 68);
+}
+
+.subredditHeadImage {
+    padding-left: 3%;
+    height: 80px;
+    width: 80px;
+}
+
+.subredditHeadImage img {
+    border: 5px solid #242323;
+    height: 100%;
+    border-radius: 999px;
+}
+
+/* MIDDLE */
+
+.subredditHead__middle {
+    margin: 20px 0;
+    padding: 0 3%;
+}
+
+.subredditHead__middle h1 {
+    margin-bottom: 10px;
+}
+
+.subredditHead__middle h3 {
+    font-weight: lighter;
+    padding-bottom: 10px;
+}
+
+.subredditHead__middle p {
+    padding: 5px 0;
+    color: rgb(182, 162, 162);
+}
+
+/* BOTTOM */
+
+.subredditHead__bottom {
+    padding: 0 3%;
+    padding-top: 10px;
+    border-top: 1px solid rgb(71, 68, 68);
+    display: flex;
+}
+
+.subredditNav {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.subredditNav:hover .MuiSvgIcon-root { 
+    color: steelblue;
+    cursor: pointer;
+}
+
+.subredditNav:hover {
+    color: steelblue;
+    border-bottom: 2px solid steelblue;
+    cursor: pointer;
+}

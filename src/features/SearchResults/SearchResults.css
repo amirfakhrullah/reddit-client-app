@@ -1,14 +1,20 @@
-.redditpostlist {
+.search__results {
     display: flex;
     flex-direction: column;
-    /* flex: 0.7; */
+    flex: 1;
     max-width: 800px;
+}
+
+.search__results__title {
+    margin-top: 20px;
+    font-weight: lighter;
+    letter-spacing: 2px;
 }
 
 /* MEDIA QUERIES */
 
 @media only screen and (min-width: 2000px) {
-    .redditpostlist {
+    .search__results {
         display: flex;
         flex-direction: column;
         flex: 0.7;
@@ -17,7 +23,7 @@
 }
 
 @media only screen and (max-width: 900px) {
-    .redditpostlist {
+    .search__results {
         flex: 0.98;
     }
 }

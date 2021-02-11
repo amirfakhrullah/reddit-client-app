@@ -144,7 +144,8 @@ const RedditCall = {
                 if (!jsonResponse) {
                     return [];
                 }
-                return jsonResponse.data;
+                console.log(jsonResponse.data.children);
+                return jsonResponse.data.children;
             })
     },
 }

@@ -23,10 +23,12 @@
     display: flex;
     align-items: center;
     padding-right: 5%;
+    cursor: pointer;
 }
 
 .reddit-logo > img {
     height: 40px;
+    cursor: pointer;
 }
 
 .searchbar {
