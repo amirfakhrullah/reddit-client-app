@@ -38,7 +38,9 @@
 }
 
 .redditpost-subreddit-image img {
-    height: 100%;
+    height: 40px;
+    width: 40px;
+    background-color: white;
     border-radius: 999px;
 }
 

@@ -22,7 +22,7 @@ export default function SubredditPage({ match }) {
     const [subredditPostsRising, setSubredditPostsRising] = useState([]);
 
     const controller = new AbortController();
-    
+
     useEffect(() => {
         RedditCall.fetchSubredditAbout(`r/${match.params.id}`).then(results => {
             setSubredditAbout(results);
@@ -41,7 +41,7 @@ export default function SubredditPage({ match }) {
         });
         return controller.abort();
     }, []);
-    
+
     return (
         <div className="subreddit__main">
             <div className="subredditHead">
