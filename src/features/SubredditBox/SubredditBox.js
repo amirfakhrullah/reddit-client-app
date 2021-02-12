@@ -27,7 +27,7 @@ export default function SubredditBox() {
                 subredditList && subredditList.map(sub => (
                     <Link to={`/${sub.data.display_name_prefixed}`} key={sub.data.id} >
                         <div className="subreddit-box" onClick={() => {
-                            window.location.href=`/${sub.data.display_name_prefixed}`
+                            window.location.href = `/${sub.data.display_name_prefixed}`
                         }}>
                             <div className="subreddit__image">
                                 <img src={sub.data.icon_img} />
@@ -40,6 +40,11 @@ export default function SubredditBox() {
                     </Link>
                 ))
             }
+            <div className="allsubreddit__nav" onClick={() => window.location.href='/subreddits'}>
+                <h3 className="all__nav full__icon__all"> See all Subreddits</h3>
+                <h3 className="all__nav half__icon__all"> See all</h3>
+                <h3 className="all__nav small__icon__all">&gt;</h3>
+            </div>
         </div>
     );
 }

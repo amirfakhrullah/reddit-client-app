@@ -35,7 +35,10 @@ export default function RedditPost(props) {
             <div className="redditpost__top">
                 <Link to={`/${props.post.data.subreddit_name_prefixed}`} key={props.post.data.id} >
                     <div className="redditpost-subreddit-image">
-                        <img src={subredditIcon} />
+                        {
+                            subredditIcon ? (<img src={subredditIcon} />) : (<div className="redditpost-subreddit-image___substitute"></div>)
+                        }
+                        {/* <img src={subredditIcon} /> */}
                     </div>
                 </Link>
                 <p className="redditpost-sub" onClick={() => {

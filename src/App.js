@@ -12,6 +12,7 @@ import RedditPostList from './features/RedditPostList/RedditPostList';
 import RightSideBar from './features/RightSideBar/RightSideBar';
 import SearchResults from './features/SearchResults/SearchResults';
 import SubredditPage from './features/SubredditPage/SubredditPage';
+import AllSubredditsPage from './features/AllSubredditsPage/AllSubredditsPage';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
@@ -67,6 +68,7 @@ function App() {
               </Route>
               <Route exact path={"/results/"} component={SearchResults} />
               <Route path="/r/:id" component={SubredditPage} />
+              <Route exact path="/subreddits" component={AllSubredditsPage} />
             </Switch>
             <RightSideBar />
           </div>

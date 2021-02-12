@@ -52,7 +52,9 @@ export default function SubredditPage({ match }) {
                     backgroundSize: `cover`
                 }}>
                     <div className="subredditHeadImage">
-                        <img src={subredditAbout.icon_img} />
+                        {
+                            subredditAbout.icon_img ? (<img src={subredditAbout.icon_img} />) : (<div className="subredditHeadImage___substitute"></div>)
+                        }
                     </div>
                 </div>
                 <div className="subredditHead__middle">

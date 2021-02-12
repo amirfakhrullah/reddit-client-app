@@ -22,8 +22,9 @@ function Header(props) {
         if (e.key === "Enter") {
             e.preventDefault();
             props.onSearch(searchItem);
+            var id = searchItem
             setSearchItem('');
-            props.history.push('/results/');
+            props.history.push(`/results/`);
         };
     }
 
