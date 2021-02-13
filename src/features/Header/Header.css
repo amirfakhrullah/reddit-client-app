@@ -88,12 +88,12 @@ textarea:focus, input:focus {
     cursor: pointer;
 }
 
-.active,
-.active > .MuiSvgIcon-root {
+#active,
+#active > .MuiSvgIcon-root {
     color: steelblue;
 }
 
-.active {
+#active {
     border-bottom: 2px solid steelblue;
 }
 

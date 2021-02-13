@@ -24,10 +24,18 @@ export default function RedditPost(props) {
         return () => controller.abort();
     }, []);
 
-    var unixTimestamp = props.post.data.created_utc;
-    var dat = new Date(unixTimestamp * 1000);
-    var hours = dat.getHours();
-    var realTime = hours + ' hours';
+    const roundTime = t => {
+        var unixTimestamp = t;
+        var data = new Date(unixTimestamp * 1000);
+        var hours = data.getHours();
+        if (hours >= 24) {
+            return data.getDay() + ' days';
+        } else if (hours >= 1) {
+            return hours + ' hours';
+        } else {
+            return data.getMinutes() + ' minutes';
+        }
+    }
 
 
     return (
@@ -38,14 +46,13 @@ export default function RedditPost(props) {
                         {
                             subredditIcon ? (<img src={subredditIcon} />) : (<div className="redditpost-subreddit-image___substitute"></div>)
                         }
-                        {/* <img src={subredditIcon} /> */}
                     </div>
                 </Link>
                 <p className="redditpost-sub" onClick={() => {
                     window.location.href = `/${props.post.data.subreddit_name_prefixed}`;
                 }}>{props.post.data.subreddit_name_prefixed}</p>
                 <p className="redditpost-by">Posted by u/{props.post.data.author}</p>
-                <p className="redditpost-time">{realTime} ago</p>
+                <p className="redditpost-time">{roundTime(props.post.data.created_utc)} ago</p>
             </div>
             <div className="redditpost__middle">
                 <h3 className="redditpost-post">{props.post.data.title}</h3>
@@ -61,14 +68,18 @@ export default function RedditPost(props) {
                     <p className="redditpost-likes">{props.post.data.score > 1000 ? (props.post.data.score / 1000).toFixed(1) + 'k' : props.post.data.score}</p>
                     <ArrowDownwardIcon />
                 </div>
-                <div className="redditpost-total-comments">
-                    <ModeCommentIcon />
-                    <p className="redditpost-comment">{props.post.data.num_comments > 1000 ? (props.post.data.num_comments / 1000).toFixed(1) + 'k' : props.post.data.num_comments}</p>
-                </div>
-                <div className="redditpost-total-details">
-                    <MoreIcon />
-                    <p className="redditpost-details">Details</p>
-                </div>
+                <Link to={`/post/${props.post.data.subreddit_name_prefixed}/${props.post.data.id}`} >
+                    <div className="redditpost-total-comments">
+                        <ModeCommentIcon />
+                        <p className="redditpost-comment">{props.post.data.num_comments > 1000 ? (props.post.data.num_comments / 1000).toFixed(1) + 'k' : props.post.data.num_comments}</p>
+                    </div>
+                </Link>
+                <Link to={`/post/${props.post.data.subreddit_name_prefixed}/${props.post.data.id}`} >
+                    <div className="redditpost-total-details">
+                        <MoreIcon />
+                        <p className="redditpost-details">Details</p>
+                    </div>
+                </Link>
             </div>
         </div>
     )

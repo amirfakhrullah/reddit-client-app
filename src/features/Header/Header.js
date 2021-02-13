@@ -40,7 +40,7 @@ function Header(props) {
 
             <Route exact path={["/", "/popular", "/controversial", "/hot", "/latest", "/rising"]}>
                 <div className="header__middle">
-                    <div className="header__option active" onClick={() => {
+                    <div className="header__option" id="active" onClick={() => {
                         window.location.href = "/hot"
                     }}>
                         <WhatshotIcon />

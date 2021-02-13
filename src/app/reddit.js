@@ -64,6 +64,34 @@ const RedditCall = {
             })
     },
 
+    fetchSinglePost(rsubreddit, id) {
+        return fetch (`${API}/${rsubreddit}/comments/${id}/.json`, initialOptions)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+            }).then(jsonResponse => {
+                if (!jsonResponse) {
+                    return[];
+                }
+                return jsonResponse[0].data.children[0].data;
+            })
+    },
+
+    fetchSinglePostComments(rsubreddit, id) {
+        return fetch (`${API}/${rsubreddit}/comments/${id}/.json`, initialOptions)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+            }).then(jsonResponse => {
+                if (!jsonResponse) {
+                    return[];
+                }
+                return jsonResponse[1].data.children.slice(0, jsonResponse[1].data.children.length-1);
+            })
+    },
+
     fetchSubredditAbout(rterm) {
         return fetch(`${API}/${rterm}/about.json`, initialOptions)
             .then(response => {
