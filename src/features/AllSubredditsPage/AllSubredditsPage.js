@@ -1,8 +1,8 @@
 import React from 'react';
 import './AllSubredditsPage.css';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
 import RedditCall from '../../app/reddit';
 import { getTrendingSubreddits } from '../SubredditBox/subredditsSlice';

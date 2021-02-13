@@ -6,7 +6,6 @@ import HomeIcon from '@material-ui/icons/Home';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import ForumIcon from '@material-ui/icons/Forum';
 
-import { Route } from 'react-router-dom';
 
 export default function SideBar() {
     return (

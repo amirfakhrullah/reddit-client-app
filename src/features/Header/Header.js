@@ -1,12 +1,8 @@
 import React from 'react';
 import './Header.css';
 import { useState } from 'react';
-import RedditCall from '../../app/reddit';
-import { useDispatch } from 'react-redux';
-import { getSearchResults } from '../RedditPostList/redditPostListSlice';
 
-import { useSelector } from 'react-redux';
-import { Route, Link, withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 
 import SearchIcon from '@material-ui/icons/Search';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
@@ -15,14 +11,12 @@ import BarChartIcon from '@material-ui/icons/BarChart';
 import MenuIcon from '@material-ui/icons/Menu';
 
 function Header(props) {
-    const dispatch = useDispatch();
     const [searchItem, setSearchItem] = useState('');
 
     const handleKeyPress = (e) => {
         if (e.key === "Enter") {
             e.preventDefault();
             props.onSearch(searchItem);
-            var id = searchItem
             setSearchItem('');
             props.history.push(`/results/`);
         };
