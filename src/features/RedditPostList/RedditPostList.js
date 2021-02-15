@@ -3,6 +3,7 @@ import './RedditPostList.css';
 import RedditPost from '../RedditPost/RedditPost';
 
 function RedditPostList(props) {
+
     return (
         <div className="redditpostlist">
             {
@@ -11,7 +12,7 @@ function RedditPostList(props) {
                 ))
             }
         </div>
-    );
+    )
 }
 
 export default RedditPostList;

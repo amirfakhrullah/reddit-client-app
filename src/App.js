@@ -49,7 +49,6 @@ function App() {
   const homePostsPopular = useSelector(state => state.redditPostList.popular);
   const homePostsControversial = useSelector(state => state.redditPostList.controversial);
 
-
   return (
     <div>
       <Router>
