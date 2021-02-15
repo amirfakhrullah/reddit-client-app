@@ -34,7 +34,9 @@ function Header(props) {
                 </div>
                 <div className="searchbar">
                     <SearchIcon />
-                    <input type="text" id="search" placeholder="search..." onChange={handleTextChange} value={searchItem} onKeyPress={handleKeyPress} />
+                    <label>
+                        <input type="text" id="search" placeholder="search..." onChange={handleTextChange} value={searchItem} onKeyPress={handleKeyPress} />
+                    </label>
                 </div>
             </div>
 

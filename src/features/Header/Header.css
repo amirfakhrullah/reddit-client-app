@@ -40,7 +40,12 @@
     border-radius: 999px;
 }
 
-.searchbar > input {
+.searchbar label,
+.searchbar input {
+    background-color: rgb(71, 68, 68);
+}
+
+.searchbar input {
     border: none;
     background-color: transparent;
     outline-width: 0;
