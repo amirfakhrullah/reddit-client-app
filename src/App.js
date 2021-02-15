@@ -76,7 +76,7 @@ function App() {
           </div>
           <div className="footer-container">
             <div className="footer-description">
-              <p>Copyright © 2020 Amir Fakhrullah. All Rights Reserved | <a href="#">Back to top</a></p>
+              <p>© 2021 Amir Fakhrullah | <a href="#">Back to top</a></p>
             </div>
           </div>
         </ScrollToTop>
