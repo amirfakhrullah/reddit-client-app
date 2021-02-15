@@ -16,7 +16,7 @@ export default function SubredditBox() {
         RedditCall.fetchTrendingSubreddits().then(results => {
             dispatch(getTrendingSubreddits(results));
         })
-    }, []);
+    }, [dispatch]);
 
     var subredditList = useSelector(state => state.subreddits);
     subredditList = subredditList.slice(0, 10);
@@ -30,7 +30,7 @@ export default function SubredditBox() {
                             window.location.href = `/${sub.data.display_name_prefixed}`
                         }}>
                             <div className="subreddit__image">
-                                <img src={sub.data.icon_img} />
+                                <img src={sub.data.icon_img} alt="" />
                             </div>
                             <div className="subreddit__details">
                                 <h3 className="subreddit">{sub.data.display_name_prefixed}</h3>

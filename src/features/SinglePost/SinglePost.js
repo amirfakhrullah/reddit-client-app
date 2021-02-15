@@ -15,9 +15,9 @@ export default function SinglePost({ match }) {
     const [postComments, setPostComments] = useState([]);
     const [subredditIcon, setSubredditIcon] = useState('');
 
-    const controller = new AbortController()
 
     useEffect(() => {
+        const controller = new AbortController()
         RedditCall.fetchSinglePost('r/' + match.params.subredditId, match.params.commentId).then(results => {
             setPostContent(results);
         });
@@ -28,7 +28,7 @@ export default function SinglePost({ match }) {
             setSubredditIcon(results.icon_img)
         });
         return () => controller.abort();
-    }, []);
+    }, [match.params]);
 
     const roundOff = num => {
         if (num >= 1000000) {
@@ -60,7 +60,7 @@ export default function SinglePost({ match }) {
                     <div className="post__top">
                         <div className="post-subreddit-image" onClick={() => window.location.href = `/${postContent.subreddit_name_prefixed}`}>
                             {
-                                subredditIcon ? (<img src={subredditIcon} />) : (<div className="post-subreddit-image___substitute"></div>)
+                                subredditIcon ? (<img src={subredditIcon} alt="subreddit-icon" />) : (<div className="post-subreddit-image___substitute"></div>)
                             }
                         </div>
                         <p className="post-sub" onClick={() => {
@@ -73,8 +73,8 @@ export default function SinglePost({ match }) {
                         <h3 className="post-post">{postContent.title}</h3>
                         {postContent.url_overridden_by_dest && (
                             <div className="post-post-image" onError={(e) => e.target.style.display = "none"}>
-                                <a href={postContent.url_overridden_by_dest} target="_blank" >
-                                    <img src={postContent.url_overridden_by_dest} />
+                                <a href={postContent.url_overridden_by_dest} target="_blank" rel="noreferrer" >
+                                    <img src={postContent.url_overridden_by_dest} alt="media" />
                                 </a>
                             </div>
                         )}

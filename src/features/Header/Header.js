@@ -30,7 +30,7 @@ function Header(props) {
         <div className="header">
             <div className="header__left">
                 <div className="reddit-logo" onClick={() => window.location.href = '/'}>
-                    <img src="./reddit.png" />
+                    <img src="./reddit.png" alt="reddit-icon" />
                 </div>
                 <div className="searchbar">
                     <SearchIcon />

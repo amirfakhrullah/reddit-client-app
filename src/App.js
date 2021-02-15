@@ -21,12 +21,10 @@ import RedditCall from './app/reddit';
 import { getHomePosts, getHomePostsPopular, getHomePostsControversial, getSearchResults } from './features/RedditPostList/redditPostListSlice';
 
 function App() {
-
-  const controller = new AbortController()
-
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const controller = new AbortController()
     RedditCall.fetchHomePosts().then(results => {
       dispatch(getHomePosts(results))
     });
@@ -75,7 +73,7 @@ function App() {
           </div>
           <div className="footer-container">
             <div className="footer-description">
-              <p>© 2021 Amir Fakhrullah | <a href="#">Back to top</a></p>
+              <p>© 2021 Amir Fakhrullah </p>
             </div>
           </div>
         </ScrollToTop>

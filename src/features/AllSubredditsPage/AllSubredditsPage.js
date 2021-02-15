@@ -18,7 +18,7 @@ function AllSubredditsPage(props) {
                 dispatch(getTrendingSubreddits(results));
             })
         }
-    }, []);
+    }, [dispatch, props.allSubreddits]);
 
     const roundOffNum = (num) => {
         if (num >= 1000000) {
@@ -47,7 +47,7 @@ function AllSubredditsPage(props) {
                                 }}>
                                     <div className="subreddit__box__image">
                                         {
-                                            group.data.icon_img ? (<img src={group.data.icon_img} />) : (<div className="subreddit__box__image__substitute"></div>)
+                                            group.data.icon_img ? (<img src={group.data.icon_img} alt="subreddit-icon" />) : (<div className="subreddit__box__image__substitute"></div>)
                                         }
                                     </div>
                                 </div>

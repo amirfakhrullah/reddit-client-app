@@ -21,9 +21,8 @@ export default function SubredditPage({ match }) {
     const [subredditPostsNew, setSubredditPostsNew] = useState([]);
     const [subredditPostsRising, setSubredditPostsRising] = useState([]);
 
-    const controller = new AbortController();
-
     useEffect(() => {
+        const controller = new AbortController();
         RedditCall.fetchSubredditAbout(`r/${match.params.id}`).then(results => {
             setSubredditAbout(results);
         });
@@ -40,7 +39,7 @@ export default function SubredditPage({ match }) {
             setSubredditPostsNew(results)
         });
         return controller.abort();
-    }, []);
+    }, [match.params.id]);
 
     return (
         <div className="subreddit__main">
@@ -53,7 +52,7 @@ export default function SubredditPage({ match }) {
                 }}>
                     <div className="subredditHeadImage">
                         {
-                            subredditAbout.icon_img ? (<img src={subredditAbout.icon_img} />) : (<div className="subredditHeadImage___substitute"></div>)
+                            subredditAbout.icon_img ? (<img src={subredditAbout.icon_img} alt="" />) : (<div className="subredditHeadImage___substitute"></div>)
                         }
                     </div>
                 </div>
