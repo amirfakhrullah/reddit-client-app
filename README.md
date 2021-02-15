@@ -1,6 +1,6 @@
 # Reddit Client App
 
-![demo](./demo.jpg)
+![demo](./demo.JPG)
 
 # Description
 
