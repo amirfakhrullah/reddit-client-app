@@ -73,7 +73,7 @@ function App() {
           </div>
           <div className="footer-container">
             <div className="footer-description">
-              <p>© 2021 Amir Fakhrullah | <a className="apiLink" href="https://www.reddit.com/dev/api/" target="_blank">Reddit API</a></p>
+              <p>© 2021 Amir Fakhrullah | <a className="apiLink" href="https://www.reddit.com/dev/api/" target="_blank" rel="noreferrer">Reddit API</a></p>
             </div>
           </div>
         </ScrollToTop>
