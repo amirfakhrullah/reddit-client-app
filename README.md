@@ -1,68 +1,127 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# Reddit Client App
 
-## Available Scripts
+![demo](./demo.jpg)
 
-In the project directory, you can run:
+# Description
 
-### `npm start`
+A front-end web app displaying data fetched from Reddit API. The web app is designed using React and Redux. The goal is to redesign the Reddit website to fit my preference; which are clean and minimalist with a matte black tone.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Table of Contents
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* [Description](#description)
+* [Technologies](#technologies)
+* [Lighthouse Score](#lighthouse-score)
+* [Setup Process](#setup-process)
+* [Acknowledgments](#acknowledgements)
+* [Ongoing / Future Works](#ongoing-/-future-works)
+* [Others](#others)
 
-### `npm test`
+# Technologies
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Languages
 
-### `npm run build`
+* Javascript
+* JSX
+* HTML
+* CSS
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Framework / Libraries 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* React
+* Redux
+* Material UI
+* AbortController
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Deploy Technology
 
-### `npm run eject`
+* Vercel
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Other Technologies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* VSCode
+* Git
+* GitHub
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Files structure
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+folder structure for the main files with some brief explanations.
 
-## Learn More
+```python
+> App.js
+> App.css
+> index.js
+> src /
+    > app /
+        > reddit.js         # file for Reddit Api fetch call
+        > scrollToTop.js    # scroll to top when navigate to page feature
+        > store.js          # redux store
+    
+    > features /
+            > AllSubredditsPage /       # page to show all the subreddits -> href=/subreddits
+                    > AllSubredditsPage.js
+                    > AllSubredditsPage.css
+                
+            > Header /              
+                    > Header.js
+                    > Header.css
+            > RedditPost /          # box for displaying each post
+                    > RedditPost.js
+                    > RedditPost.css
+                
+            > RedditPostList /      # container to display all posts
+                        > RedditPostList.js
+                        > RedditPostList.css
+                        > RedditPostListSlice.js    # reducer logic and action for home posts, and several catagorised posts
+                
+            > RightSideBar /        # displaying subreddits for programmers on the right side of the page (hardcoded)
+                        > RightSideBar.js
+                        > RightSideBar.css
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+            > SearchResults /       # page for displaying search results
+                        > SearchResults.js
+                        > SearchResults.css
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+            > SideBar /         # left side bar: navigation and trending subreddits
+                        > SideBar.js
+                        > SideBar.css
 
-### Code Splitting
+            > SinglePost /      # page for displaying singular posts with its comments, and can click on image
+                        > SinglePost.js
+                        > SinglePost.css
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+            > SubredditBox /        # feature in the SideBar to display trending subreddits
+                        > SubredditBox.js
+                        > SubredditBox.css
+                        > SubredditsSlice.js   # reducer logic and action for storing trending subreddits in redux store
 
-### Analyzing the Bundle Size
+            > SubredditPage /       # page to display the selected subreddit
+                        > SubredditPage.js
+                        > SubredditPage.css
+```
+# Lighthouse Score
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+![lighthouse-score](./lighthouse-score.JPG)
 
-### Making a Progressive Web App
+# Setup Process
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+* Clone or download the repository
+* Open the directory on the terminal and run the development by typing 'npm run' (make sure to npm install everything)
 
-### Advanced Configuration
+# Acknowledgements
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+This project obtains the data from Reddit API. I have nothing to do with the content displayed in the web app. This is a Codecademy project for Full-Stack Software Engineering Course. The goal was to practice and implement the front-end skills gained during the course (HTML, CSS, JavaScript, React, Redux, Jest, Enzyme and Selenium, Git and Github Projects, Command line, Wireframes)
 
-### Deployment
+# Ongoing / Future Works
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Ongoing works
 
-### `npm run build` fails to minify
+* Testing suite using Jest, Enzyme and Selenium
+* Circular loading icon feature when loading the page
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Future works
+
+* Adding the user page
+
+## Others
+
+* if you guys interested in contributing to this web app (fixing bugs or adding new feature), open a pull request
