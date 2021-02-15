@@ -32,9 +32,16 @@ a {
 }
 
 .footer-description {
+  color: black;
+  font-weight: bold;
   display: flex;
   align-items: center;
   padding: 20px;
+}
+
+.apiLink:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1300px) {
