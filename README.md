@@ -46,7 +46,7 @@ A front-end web app displaying data fetched from Reddit API. The web app is desi
 
 folder structure for the main files with some brief explanations.
 
-```python
+```
 > App.js
 > App.css
 > index.js
