@@ -1,7 +1,7 @@
 .redditpost {
     display: flex;
     flex-direction: column;
-    margin: 20px 0;
+    margin-top: 20px;
     border-radius: 10px;
     border: 1px solid rgb(71, 68, 68);
 }
@@ -24,6 +24,11 @@
     margin-left: 3%;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.redditpost-sub:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .redditpost-sub,

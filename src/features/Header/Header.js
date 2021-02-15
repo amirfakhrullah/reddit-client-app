@@ -8,7 +8,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
 import FiberNewIcon from '@material-ui/icons/FiberNew';
 import BarChartIcon from '@material-ui/icons/BarChart';
-import MenuIcon from '@material-ui/icons/Menu';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 function Header(props) {
     const [searchItem, setSearchItem] = useState('');
@@ -29,7 +29,7 @@ function Header(props) {
     return (
         <div className="header">
             <div className="header__left">
-                <div className="reddit-logo" onClick={() => window.location.href='/'}>
+                <div className="reddit-logo" onClick={() => window.location.href = '/'}>
                     <img src="./reddit.png" />
                 </div>
                 <div className="searchbar">
@@ -61,8 +61,8 @@ function Header(props) {
                 </div>
             </Route>
 
-            <div className="header__right">
-                <MenuIcon />
+            <div className="header__right" onClick={() => window.open('https://github.com/amirfakhrullah', '_blank')}>
+                <GitHubIcon />
             </div>
         </div>
     )

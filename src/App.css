@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #242323;
   color:aliceblue;
@@ -16,6 +20,21 @@ a {
 .content {
   display: flex;
   justify-content: space-between;
+}
+
+.footer-container {
+  margin-top: 40px;
+  background-color: steelblue;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-description {
+  display: flex;
+  align-items: center;
+  padding: 20px;
 }
 
 @media only screen and (max-width: 1300px) {

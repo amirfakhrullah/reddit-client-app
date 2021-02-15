@@ -59,9 +59,9 @@ textarea:focus, input:focus {
 
 .header__middle {
     display: flex;
-    flex: 1;
+    flex: 0.9;
     position: relative;
-    left: 5%;
+    left: 4%;
 }
 
 .header__option {
@@ -88,14 +88,14 @@ textarea:focus, input:focus {
     cursor: pointer;
 }
 
-#active,
+/* #active,
 #active > .MuiSvgIcon-root {
     color: steelblue;
 }
 
 #active {
     border-bottom: 2px solid steelblue;
-}
+} */
 
 /* HEADER RIGHT */
 
@@ -128,7 +128,7 @@ textarea:focus, input:focus {
 
 @media only screen and (min-width: 1700px) {
     .header__middle {
-        left: 15%;
+        left: 12%;
     }
 
     .header__option {
