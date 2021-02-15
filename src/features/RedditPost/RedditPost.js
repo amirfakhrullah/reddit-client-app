@@ -43,7 +43,7 @@ export default function RedditPost(props) {
                 <Link to={`/${props.post.data.subreddit_name_prefixed}`} key={props.post.data.id} >
                     <div className="redditpost-subreddit-image">
                         {
-                            subredditIcon ? (<img src={subredditIcon} alt="" />) : (<div className="redditpost-subreddit-image___substitute"></div>)
+                            subredditIcon ? (<img src={subredditIcon} alt="subreddit-icon" />) : (<div className="redditpost-subreddit-image___substitute"></div>)
                         }
                     </div>
                 </Link>
@@ -57,7 +57,7 @@ export default function RedditPost(props) {
                 <h3 className="redditpost-post">{props.post.data.title}</h3>
                 {props.post.data.url_overridden_by_dest && (
                     <div className="redditpost-post-image" onError={(e) => e.target.style.display = "none"}>
-                        <img src={props.post.data.url_overridden_by_dest} alt="" />
+                        <img src={props.post.data.url_overridden_by_dest} alt="media" />
                     </div>
                 )}
             </div>

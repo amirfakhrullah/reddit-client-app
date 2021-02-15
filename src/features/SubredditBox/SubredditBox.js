@@ -30,7 +30,7 @@ export default function SubredditBox() {
                             window.location.href = `/${sub.data.display_name_prefixed}`
                         }}>
                             <div className="subreddit__image">
-                                <img src={sub.data.icon_img} alt="" />
+                                <img src={sub.data.icon_img} alt="subreddit-icon" />
                             </div>
                             <div className="subreddit__details">
                                 <h3 className="subreddit">{sub.data.display_name_prefixed}</h3>

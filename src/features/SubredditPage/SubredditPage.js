@@ -52,7 +52,7 @@ export default function SubredditPage({ match }) {
                 }}>
                     <div className="subredditHeadImage">
                         {
-                            subredditAbout.icon_img ? (<img src={subredditAbout.icon_img} alt="" />) : (<div className="subredditHeadImage___substitute"></div>)
+                            subredditAbout.icon_img ? (<img src={subredditAbout.icon_img} alt="subreddit-icon" />) : (<div className="subredditHeadImage___substitute"></div>)
                         }
                     </div>
                 </div>
@@ -60,7 +60,7 @@ export default function SubredditPage({ match }) {
                     <h1>{subredditAbout.display_name_prefixed}</h1>
                     <h3>{subredditAbout.public_description}</h3>
                     <p>{subredditAbout.subscribers} Members</p>
-                    <p>{subredditAbout.accounts_active} Active Members</p>
+                    <p>{subredditAbout.accounts_active} Online</p>
                 </div>
                 <div className="subredditHead__bottom">
                     <div className="subredditNav active" onClick={() => {
