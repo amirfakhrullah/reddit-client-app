@@ -2,11 +2,11 @@
 
 ![demo](./demo.JPG)
 
-# Description
+## Description
 
 A front-end web app displaying data fetched from Reddit API. The web app is designed using React and Redux. The goal is to redesign the Reddit website to fit my preference; which are clean and minimalist with a matte black tone.
 
-# Table of Contents
+## Table of Contents
 
 * [Description](#description)
 * [Technologies](#technologies)
@@ -16,33 +16,33 @@ A front-end web app displaying data fetched from Reddit API. The web app is desi
 * [Ongoing / Future Works](#ongoing-/-future-works)
 * [Others](#others)
 
-# Technologies
+## Technologies
 
-## Languages
+### Languages
 
 * Javascript
 * JSX
 * HTML
 * CSS
 
-## Framework / Libraries 
+### Framework / Libraries
 
 * React
 * Redux
 * Material UI
 * AbortController
 
-## Deploy Technology
+### Deploy Technology
 
 * Vercel
 
-## Other Technologies
+### Other Technologies
 
 * VSCode
 * Git
 * GitHub
 
-## Files structure
+### Files structure
 
 folder structure for the main files with some brief explanations.
 
@@ -98,27 +98,28 @@ folder structure for the main files with some brief explanations.
                         > SubredditPage.js
                         > SubredditPage.css
 ```
-# Lighthouse Score
+
+## Lighthouse Score
 
 ![lighthouse-score](./lighthouse-score.JPG)
 
-# Setup Process
+## Setup Process
 
 * Clone or download the repository
 * Open the directory on the terminal and run the development by typing 'npm run' (make sure to npm install everything)
 
-# Acknowledgements
+## Acknowledgements
 
 This project obtains the data from Reddit API. I have nothing to do with the content displayed in the web app. This is a Codecademy project for Full-Stack Software Engineering Course. The goal was to practice and implement the front-end skills gained during the course (HTML, CSS, JavaScript, React, Redux, Jest, Enzyme and Selenium, Git and Github Projects, Command line, Wireframes)
 
-# Ongoing / Future Works
+## Ongoing / Future Works
 
-## Ongoing works
+### Ongoing works
 
 * Testing suite using Jest, Enzyme and Selenium
 * Circular loading icon feature when loading the page
 
-## Future works
+### Future works
 
 * Adding the user page
 
