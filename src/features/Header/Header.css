@@ -148,11 +148,23 @@ textarea:focus, input:focus {
 }
 
 @media only screen and (max-width: 700px) {
-    .searchbar > input {
+    /* .searchbar > input {
         max-width: 50px;
     }
 
     p.header-nav-title {
+        display: none;
+    } */
+
+    .header {
+        justify-content: center;
+    }
+
+    .header__middle {
+        display: none;
+    }
+
+    .header__right {
         display: none;
     }
 }

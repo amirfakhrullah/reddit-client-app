@@ -228,4 +228,88 @@
     .comment p {
         font-size: 0.8em;
     }
+
+    .comment-by,
+    .comment-time,
+    .comment__middle p {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .post {
+        width: 450px;
+    }
+
+    .post-post-image {
+        margin: 0 auto;
+        flex-grow: 3;
+        min-width: 200px;
+        max-height: 200px;
+    }
+
+    .post-post-image img {
+        margin: 0 auto;
+        max-height: 200px;
+        max-width: 200px;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .singlePost {
+        width: 350px;
+        margin: 10px auto;
+    }
+
+    .post {
+        width: 350px;
+        margin: 10px auto;
+    }
+
+    .post-subreddit-image {
+        height: 20px;
+        width: 20px;
+    }
+    
+    .post-subreddit-image___substitute {
+        height: 20px;
+        width: 20px;
+    }
+
+    .post-sub, 
+    .post-by, 
+    .post-time {
+        font-size: 0.7rem;
+    }
+
+    .post-post {
+        font-size: 0.7rem;
+    }
+
+    .post-total-likes, 
+    .post-total-comments {
+        font-size: 0.7rem;
+    }
+
+    .comments-container {
+        margin: 10px auto;
+        width: 350px;
+    }
+
+    .comment-by,
+    .comment-time {
+        font-size: 0.7rem;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .singlePost {
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .singlePost {
+        margin-left: 10px;
+    }
 }

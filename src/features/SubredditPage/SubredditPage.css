@@ -89,3 +89,28 @@
     border-bottom: 2px solid steelblue;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 1300px) {
+    .subreddit__main {
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .subreddit__main {
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .subredditHead {
+        width: 350px;
+        margin: 10px auto;
+    }
+
+    .subredditHead__middle h1,
+    .subredditHead__middle h3,
+    .subredditHead__middle p {
+        font-size: 1rem;
+    }
+}

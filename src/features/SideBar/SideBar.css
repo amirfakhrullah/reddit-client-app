@@ -48,6 +48,10 @@ h3.subreddit__header {
 
 @media only screen and (max-width: 700px) {
     .sidebar {
+        display: none;
+    }
+
+    /* .sidebar {
         width: 50px;
     }
 
@@ -57,11 +61,11 @@ h3.subreddit__header {
 
     .subreddit__header {
         display: none;
-    }
+    } */
 }
 
-@media only screen and (max-width: 500px) {
+/* @media only screen and (max-width: 500px) {
     .sidebar {
         display: none;
     }
-}
+} */
