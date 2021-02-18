@@ -13,3 +13,13 @@ test('renders learn react link', () => {
 
   expect(getByText(/learn/i)).toBeInTheDocument();
 });
+
+const { mount } = require("enzyme")
+
+describe('App full DOM rendering', () => {
+  it('renders without crashing', () => {
+    mount(<Provider store={store}>
+            <App />
+          </Provider>)
+  })
+})

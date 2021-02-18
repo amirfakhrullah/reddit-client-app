@@ -13,9 +13,16 @@
     margin: 0 10px;
 }
 
-.subreddit__image>img {
+.subreddit__image img {
     width: 100%;
     border-radius: 50%;
+}
+
+.subredditbox-subreddit-image___substitute {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: white;
 }
 
 .subreddit__details {

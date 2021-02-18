@@ -2,6 +2,8 @@ import React from 'react';
 import './Header.css';
 import { useState } from 'react';
 
+import reddit from './reddit.png'
+
 import { Route, withRouter } from 'react-router-dom';
 
 import SearchIcon from '@material-ui/icons/Search';
@@ -30,7 +32,7 @@ function Header(props) {
         <div className="header">
             <div className="header__left">
                 <div className="reddit-logo" onClick={() => window.location.href = '/'}>
-                    <img src="./reddit.png" alt="reddit-icon" />
+                    <img src={reddit} alt="reddit-icon" />
                 </div>
                 <div className="searchbar">
                     <SearchIcon />

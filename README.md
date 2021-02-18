@@ -4,7 +4,7 @@
 
 ## Description
 
-A front-end web app displaying data fetched from Reddit API. The web app is designed using React and Redux. The goal is to redesign the Reddit website to fit my preference; which are clean and minimalist with a matte black tone.
+A front-end web app displaying data fetched from Reddit API. The web app is designed using React and Redux with testing using Enzyme. The goal is to redesign the Reddit website to fit my preference; which are clean and minimalist with a matte black tone.
 
 ## Table of Contents
 
@@ -12,9 +12,9 @@ A front-end web app displaying data fetched from Reddit API. The web app is desi
 * [Technologies](#technologies)
 * [Lighthouse Score](#lighthouse-score)
 * [Setup Process](#setup-process)
-* [Acknowledgments](#acknowledgements)
 * [Ongoing / Future Works](#ongoing-/-future-works)
 * [Others](#others)
+* [Acknowledgments](#acknowledgements)
 
 ## Technologies
 
@@ -31,6 +31,10 @@ A front-end web app displaying data fetched from Reddit API. The web app is desi
 * Redux
 * Material UI
 * AbortController
+
+### Testing Technology
+
+* Enzyme
 
 ### Deploy Technology
 
@@ -108,10 +112,6 @@ folder structure for the main files with some brief explanations.
 * Clone or download the repository
 * Open the directory on the terminal and run the development by typing 'npm run' (make sure to npm install everything)
 
-## Acknowledgements
-
-This project obtains the data from Reddit API. I have nothing to do with the content displayed in the web app. This is a Codecademy project for Full-Stack Software Engineering Course. The goal was to practice and implement the front-end skills gained during the course (HTML, CSS, JavaScript, React, Redux, Jest, Enzyme and Selenium, Git and Github Projects, Command line, Wireframes)
-
 ## Ongoing / Future Works
 
 ### Ongoing works
@@ -121,8 +121,13 @@ This project obtains the data from Reddit API. I have nothing to do with the con
 
 ### Future works
 
+* Adding test for all components, etc.
 * Adding the user page
 
 ## Others
 
-* if you guys interested in contributing to this web app (fixing bugs or adding new feature), open a pull request
+* if you guys interested in contributing to this web app (fixing bugs or adding new feature), open a pull request.
+
+## Acknowledgements
+
+This project obtains the data from Reddit API. I have nothing to do with the content displayed in the web app. This is a Codecademy project for Full-Stack Software Engineering Course. The goal was to practice and implement the front-end skills gained during the course (HTML, CSS, JavaScript, React, Redux, Jest, Enzyme and Selenium, Git and Github Projects, Command line, Wireframes).
