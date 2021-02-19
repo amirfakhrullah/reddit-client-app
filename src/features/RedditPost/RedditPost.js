@@ -57,7 +57,9 @@ export default function RedditPost(props) {
                 <h3 className="redditpost-post">{props.post.data.title}</h3>
                 {props.post.data.url_overridden_by_dest && (
                     <div className="redditpost-post-image" onError={(e) => e.target.style.display = "none"}>
-                        <img src={props.post.data.url_overridden_by_dest} alt="media" />
+                        <a href={props.post.data.url_overridden_by_dest} target="_blank" rel="noreferrer" >
+                            <img src={props.post.data.url_overridden_by_dest} alt="media" />
+                        </a>
                     </div>
                 )}
             </div>

@@ -61,6 +61,16 @@
     background-color: white;
 }
 
+.post-subreddit-image:hover,
+.post-subreddit-image___substitute:hover {
+    cursor: pointer;
+}
+
+.post-sub:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 /* MIDDLE */
 
 .post__middle {
@@ -211,6 +221,7 @@
 
     .post-post {
         font-size: 1em;
+        font-weight: normal;
     }
 
     .post-post-image {
