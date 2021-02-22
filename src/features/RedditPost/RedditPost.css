@@ -84,7 +84,7 @@
 
 .redditpost-post-image img {
     max-height: 500px;
-    width: auto;
+    max-width: 600px;
     overflow: hidden;
     border-radius: 10px;
 }
