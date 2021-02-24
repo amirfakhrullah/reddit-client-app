@@ -126,7 +126,7 @@ folder structure for the main files with some brief explanations.
 
 ## Others
 
-* if you guys interested in contributing to this web app (fixing bugs or adding new feature), open a pull request.
+* if you guys interested in contributing to this web app (fixing bugs or adding new feature), open a new issue.
 
 ## Acknowledgements
 
