@@ -38,7 +38,6 @@ function AllSubredditsPage(props) {
     return (
         <div className="all__subreddits__whole">
             <h1>All Subreddits:</h1>
-            <LoadingIndicator />
             <div className="all__subreddits__page__main">
                 <div className="subreddits__container">
                     {
@@ -68,6 +67,7 @@ function AllSubredditsPage(props) {
                     }
                 </div>
             </div>
+            <LoadingIndicator />
         </div>
     )
 }

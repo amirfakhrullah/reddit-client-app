@@ -98,7 +98,6 @@ export default function SinglePost({ match }) {
 
                 <div className="comments-container">
                     <h3 className="comments-title">Comments:</h3>
-                    <LoadingIndicator />
 
                     {postComments && postComments.map(comment => (
                         <div className="comment" key={comment.data.id}>
@@ -118,6 +117,7 @@ export default function SinglePost({ match }) {
                             </div>
                         </div>
                     ))}
+                    <LoadingIndicator />
                 </div>
             </div >
         )

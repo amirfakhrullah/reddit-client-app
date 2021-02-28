@@ -8,12 +8,12 @@ function RedditPostList(props) {
 
     return (
         <div className="redditpostlist">
-            <LoadingIndicator />
             {
                 props.posts && props.posts.map(data => (
                     <RedditPost post={data} key={data.data.id} />
                 ))
             }
+            <LoadingIndicator />
         </div>
     )
 }
