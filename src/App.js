@@ -43,9 +43,10 @@ function App() {
   }, [dispatch]);
 
 const search = (term) => {
+  trackPromise(
   RedditCall.fetchSearchResults(term).then(results => {
     dispatch(getSearchResults(results));
-  })
+  }))
 };
 
 const homePosts = useSelector(state => state.redditPostList.home);

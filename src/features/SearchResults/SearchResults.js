@@ -5,6 +5,8 @@ import RedditPost from '../RedditPost/RedditPost';
 
 import { connect } from 'react-redux';
 
+import { LoadingIndicator } from '../../index';
+
 function SearchResults(props) {
 
     return (
@@ -15,6 +17,7 @@ function SearchResults(props) {
                     <RedditPost post={post} key={post.data.id} />
                 ))
             }
+            <LoadingIndicator />
         </div>
     )
 }
