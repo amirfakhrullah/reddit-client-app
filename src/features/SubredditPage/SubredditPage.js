@@ -13,6 +13,7 @@ import WhatshotIcon from '@material-ui/icons/Whatshot';
 import FiberNewIcon from '@material-ui/icons/FiberNew';
 import BarChartIcon from '@material-ui/icons/BarChart';
 
+import { trackPromise } from 'react-promise-tracker';
 
 export default function SubredditPage({ match }) {
     const [subredditAbout, setSubredditAbout] = useState({});
@@ -26,18 +27,22 @@ export default function SubredditPage({ match }) {
         RedditCall.fetchSubredditAbout(`r/${match.params.id}`).then(results => {
             setSubredditAbout(results);
         });
+        trackPromise(
         RedditCall.fetchSubredditPosts(`r/${match.params.id}`).then(results => {
             setSubredditPosts(results)
-        });
+        }));
+        trackPromise(
         RedditCall.fetchSubredditPostsHot(`r/${match.params.id}`).then(results => {
             setSubredditPostsHot(results)
-        });
+        }));
+        trackPromise(
         RedditCall.fetchSubredditPostsRising(`r/${match.params.id}`).then(results => {
             setSubredditPostsRising(results)
-        });
+        }));
+        trackPromise(
         RedditCall.fetchSubredditPostsNew(`r/${match.params.id}`).then(results => {
             setSubredditPostsNew(results)
-        });
+        }));
         return controller.abort();
     }, [match.params.id]);
 

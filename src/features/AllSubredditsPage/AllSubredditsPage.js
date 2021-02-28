@@ -9,14 +9,18 @@ import { getTrendingSubreddits } from '../SubredditBox/subredditsSlice';
 
 import { connect } from 'react-redux';
 
+import { trackPromise } from 'react-promise-tracker';
+import { LoadingIndicator } from '../../index';
+
 function AllSubredditsPage(props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
         if (props.allSubreddits === []) {
+            trackPromise(
             RedditCall.fetchTrendingSubreddits().then(results => {
                 dispatch(getTrendingSubreddits(results));
-            })
+            }))
         }
     }, [dispatch, props.allSubreddits]);
 
@@ -34,6 +38,7 @@ function AllSubredditsPage(props) {
     return (
         <div className="all__subreddits__whole">
             <h1>All Subreddits:</h1>
+            <LoadingIndicator />
             <div className="all__subreddits__page__main">
                 <div className="subreddits__container">
                     {

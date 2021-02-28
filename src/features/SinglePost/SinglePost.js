@@ -8,7 +8,10 @@ import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import ModeCommentIcon from '@material-ui/icons/ModeComment';
 
-import AbortController from "abort-controller"
+import AbortController from "abort-controller";
+
+import { trackPromise } from 'react-promise-tracker';
+import { LoadingIndicator } from '../../index';
 
 export default function SinglePost({ match }) {
     const [postContent, setPostContent] = useState({});
@@ -21,9 +24,10 @@ export default function SinglePost({ match }) {
         RedditCall.fetchSinglePost('r/' + match.params.subredditId, match.params.commentId).then(results => {
             setPostContent(results);
         });
+        trackPromise(
         RedditCall.fetchSinglePostComments('r/' + match.params.subredditId, match.params.commentId).then(results => {
             setPostComments(results);
-        });
+        }));
         RedditCall.fetchSubredditAbout('r/' + match.params.subredditId).then(results => {
             setSubredditIcon(results.icon_img)
         });
@@ -94,6 +98,7 @@ export default function SinglePost({ match }) {
 
                 <div className="comments-container">
                     <h3 className="comments-title">Comments:</h3>
+                    <LoadingIndicator />
 
                     {postComments && postComments.map(comment => (
                         <div className="comment" key={comment.data.id}>
