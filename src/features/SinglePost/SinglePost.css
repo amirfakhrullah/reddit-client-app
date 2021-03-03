@@ -103,7 +103,7 @@
 
 .post-post-image img {
     max-height: 500px;
-    width: auto;
+    max-width: 600px;
     overflow: hidden;
     border-radius: 10px;
 }
@@ -197,6 +197,7 @@
     align-items: center;
     justify-content: center;
     border-left: 1px solid rgb(71, 68, 68); 
+    min-width: 20px;
 }
 
 .comment-time,
