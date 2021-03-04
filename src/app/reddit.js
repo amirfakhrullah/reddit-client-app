@@ -51,7 +51,7 @@ const RedditCall = {
     },
 
     fetchHomePostsControversial() {
-        return fetch(`${API}/controversial/.json`, initialOptions)
+        return fetch(`${API}/hot/.json`, initialOptions)
             .then(response => {
                 if (response.ok) {
                     return response.json();
